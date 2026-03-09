@@ -1,0 +1,1469 @@
+[
+  {
+    "id": 1,
+    "key": "Company Name",
+    "category": "Company Basics",
+    "description": "Full legal/official name of the entity",
+    "data_type": "VARCHAR(255)",
+    "nullability": "Not Null",
+    "data_source": "Company Registry / SEC Filings"
+  },
+  {
+    "id": 2,
+    "key": "Short Name",
+    "category": "Company Basics",
+    "description": "Commonly used short/abbreviated name",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "Marketing Assets / Website"
+  },
+  {
+    "id": 3,
+    "key": "Logo",
+    "category": "Company Basics",
+    "description": "Representative logo URL or image link",
+    "data_type": "TEXT (URL)",
+    "nullability": "Not Null",
+    "data_source": "Official Website / LinkedIn"
+  },
+  {
+    "id": 4,
+    "key": "Category",
+    "category": "Company Basics",
+    "description": "Business classification (Startup, MSME, SMB, Investor, VC)",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Not Null",
+    "data_source": "Internal Classification / 3rd Party DB"
+  },
+  {
+    "id": 5,
+    "key": "Year of Incorporation",
+    "category": "Company Basics",
+    "description": "Year the company was legally incorporated/founded",
+    "data_type": "INTEGER",
+    "nullability": "Not Null",
+    "data_source": "Company Registry"
+  },
+  {
+    "id": 6,
+    "key": "Overview of the Company",
+    "category": "Company Narrative",
+    "description": "A high-level summary of what the company does and its market position.",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Company Website / Pitch Deck"
+  },
+  {
+    "id": 7,
+    "key": "Nature of Company",
+    "category": "Company Basics",
+    "description": "Ownership structure (Private, Public, Subsidiary, etc.)",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Not Null",
+    "data_source": "Legal Filings"
+  },
+  {
+    "id": 8,
+    "key": "Company Headquarters",
+    "category": "Company Basics",
+    "description": "Primary headquarters address and location",
+    "data_type": "VARCHAR(255)",
+    "nullability": "Not Null",
+    "data_source": "Company Website"
+  },
+  {
+    "id": 9,
+    "key": "Countries Operating In",
+    "category": "Geographic Presence",
+    "description": "List of countries where the company actively operates",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Annual Report/ Company Website(Added Company website)"
+  },
+  {
+    "id": 10,
+    "key": "Number of Offices (beyond HQ)",
+    "category": "Geographic Presence",
+    "description": "Number of additional offices excluding headquarters",
+    "data_type": "INTEGER",
+    "nullability": "Nullable",
+    "data_source": "Company Careers Page/ Company Website (Added Company website)"
+  },
+  {
+    "id": 11,
+    "key": "Office Locations",
+    "category": "Geographic Presence",
+    "description": "Specific addresses/locations of all offices",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Company Contact Page"
+  },
+  {
+    "id": 12,
+    "key": "Employee Size",
+    "category": "People & Talent",
+    "description": "Total headcount/employee size (full-time equivalents)",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Not Null",
+    "data_source": "LinkedIn / HR Tools"
+  },
+  {
+    "id": 13,
+    "key": "Hiring Velocity",
+    "category": "People & Talent",
+    "description": "Current open job roles count and breakdown by department",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Job Boards / Careers Page"
+  },
+  {
+    "id": 14,
+    "key": "Employee Turnover",
+    "category": "People & Talent",
+    "description": "The annual percentage of employees leaving the organization.",
+    "data_type": "VARCHAR(10)",
+    "nullability": "Nullable",
+    "data_source": "HR Reports / Glassdoor/Indeed (Added Indeed)"
+  },
+  {
+    "id": 15,
+    "key": "Average Retention Tenure",
+    "category": "People & Talent",
+    "description": "The average length of time an employee stays with the company.",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Nullable",
+    "data_source": "LinkedIn Insights"
+  },
+  {
+    "id": 16,
+    "key": "Pain Points Being Addressed",
+    "category": "Business Model",
+    "description": "Primary customer problems/pain points the company solves",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Pitch Deck / Website"
+  },
+  {
+    "id": 17,
+    "key": "Focus Sectors / Industries",
+    "category": "Business Model",
+    "description": "Target industries/sectors using GICS classification",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Not Null",
+    "data_source": "Pitch Deck"
+  },
+  {
+    "id": 18,
+    "key": "Services / Offerings / Products",
+    "category": "Business Model",
+    "description": "Core products, services, or offerings provided",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Website Products Page"
+  },
+  {
+    "id": 19,
+    "key": "Top Customers by Client Segments",
+    "category": "Business Model",
+    "description": "Top 10-50 customers grouped by segments",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Marketing Case Studies"
+  },
+  {
+    "id": 20,
+    "key": "Core Value Proposition",
+    "category": "Business Model",
+    "description": "Detailed breakdown of specific benefits and unique selling points for customers.",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Marketing Collateral"
+  },
+  {
+    "id": 21,
+    "key": "Vision",
+    "category": "Strategy & Culture",
+    "description": "Long-term aspirational goal of the company",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Annual Report"
+  },
+  {
+    "id": 22,
+    "key": "Mission",
+    "category": "Strategy & Culture",
+    "description": "Short-term actionable purpose and objectives",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Annual Report"
+  },
+  {
+    "id": 23,
+    "key": "Values",
+    "category": "Strategy & Culture",
+    "description": "Core principles guiding decisions and behavior",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Careers Page"
+  },
+  {
+    "id": 24,
+    "key": "Unique Differentiators",
+    "category": "Strategy & Culture",
+    "description": "Unique features setting the company apart",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Pitch Deck"
+  },
+  {
+    "id": 25,
+    "key": "Competitive Advantages",
+    "category": "Strategy & Culture",
+    "description": "Sustainable edges like proprietary tech or network effects",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Investor Presentation"
+  },
+  {
+    "id": 26,
+    "key": "Weaknesses / Gaps in Offering",
+    "category": "Strategy & Culture",
+    "description": "Notable gaps, limitations, or weaknesses in products/services",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Analyst Reports"
+  },
+  {
+    "id": 27,
+    "key": "Key Challenges and Unmet Needs",
+    "category": "Strategy & Culture",
+    "description": "Major strategic, operational, or tech challenges faced",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Analyst Reports"
+  },
+  {
+    "id": 28,
+    "key": "Key Competitors",
+    "category": "Competitive Landscape",
+    "description": "Direct and indirect competitors in the market",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Market Research"
+  },
+  {
+    "id": 29,
+    "key": "Technology Partners",
+    "category": "Competitive Landscape",
+    "description": "Strategic tech/alliance partners",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Partners Page"
+  },
+  {
+    "id": 30,
+    "key": "Interesting Facts",
+    "category": "Company Narrative",
+    "description": "2-3 unique/interesting facts or stories about the company",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "About Us Page / Blog"
+  },
+  {
+    "id": 31,
+    "key": "Recent News",
+    "category": "Company Narrative",
+    "description": "Key news/events from the last 12-24 months with dates",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "PR Newswire / Crunchbase"
+  },
+  {
+    "id": 32,
+    "key": "Website URL",
+    "category": "Digital Presence",
+    "description": "Primary official website URL",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Not Null",
+    "data_source": "Official Registry"
+  },
+  {
+    "id": 33,
+    "key": "Quality of Website",
+    "category": "Digital Presence",
+    "description": "Assessment of site UX, clarity, messaging, professionalism",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Analyst Audit"
+  },
+  {
+    "id": 34,
+    "key": "Website Rating",
+    "category": "Digital Presence",
+    "description": "Overall website quality score out of 10",
+    "data_type": "DECIMAL(3,1)",
+    "nullability": "Nullable",
+    "data_source": "Lighthouse / HubSpot Grader"
+  },
+  {
+    "id": 35,
+    "key": "Website Traffic Rank",
+    "category": "Digital Presence",
+    "description": "Global and US traffic rank",
+    "data_type": "INTEGER",
+    "nullability": "Nullable",
+    "data_source": "SimilarWeb / Semrush"
+  },
+  {
+    "id": 36,
+    "key": "Social Media Followers \u2013 Combined",
+    "category": "Digital Presence",
+    "description": "Total followers across all social platforms",
+    "data_type": "INTEGER",
+    "nullability": "Not Null",
+    "data_source": "Social Media APIs"
+  },
+  {
+    "id": 37,
+    "key": "Glassdoor Rating",
+    "category": "Digital Presence",
+    "description": "Employee/review rating on Glassdoor",
+    "data_type": "DECIMAL(2,1)",
+    "nullability": "Nullable",
+    "data_source": "Glassdoor API / Scrape"
+  },
+  {
+    "id": 38,
+    "key": "Indeed Rating",
+    "category": "Digital Presence",
+    "description": "Employee/review rating on Indeed",
+    "data_type": "DECIMAL(2,1)",
+    "nullability": "Nullable",
+    "data_source": "Indeed"
+  },
+  {
+    "id": 39,
+    "key": "Google Reviews Rating",
+    "category": "Digital Presence",
+    "description": "Customer rating on Google Reviews",
+    "data_type": "DECIMAL(2,1)",
+    "nullability": "Nullable",
+    "data_source": "Google Maps API"
+  },
+  {
+    "id": 40,
+    "key": "LinkedIn Profile URL",
+    "category": "Digital Presence",
+    "description": "Official LinkedIn company profile URL",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "LinkedIn"
+  },
+  {
+    "id": 41,
+    "key": "Twitter (X) Handle",
+    "category": "Digital Presence",
+    "description": "Official Twitter/X handle",
+    "data_type": "VARCHAR(30)",
+    "nullability": "Nullable",
+    "data_source": "Twitter (X)"
+  },
+  {
+    "id": 42,
+    "key": "Facebook Page URL",
+    "category": "Digital Presence",
+    "description": "Official Facebook page URL",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "Facebook"
+  },
+  {
+    "id": 43,
+    "key": "Instagram Page URL",
+    "category": "Digital Presence",
+    "description": "Official Instagram page URL",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "Instagram"
+  },
+  {
+    "id": 44,
+    "key": "CEO Name",
+    "category": "Leadership",
+    "description": "Name of the CEO/equivalent top executive",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Not Null",
+    "data_source": "LinkedIn / Company Website"
+  },
+  {
+    "id": 45,
+    "key": "CEO LinkedIn URL",
+    "category": "Leadership",
+    "description": "CEO's LinkedIn profile URL",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "LinkedIn"
+  },
+  {
+    "id": 46,
+    "key": "Key Business Leaders",
+    "category": "Leadership",
+    "description": "2-3 key executives: Name, Title, LinkedIn, Email, Phone",
+    "data_type": "JSON",
+    "nullability": "Not Null",
+    "data_source": "LinkedIn / Clearbit"
+  },
+  {
+    "id": 47,
+    "key": "Warm Introduction Pathways",
+    "category": "Leadership",
+    "description": "Paths for warm intros (shared investors/board/alumni)",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Relationship Intelligence Tools"
+  },
+  {
+    "id": 48,
+    "key": "Decision Maker Accessibility",
+    "category": "Leadership",
+    "description": "Ease of reaching decision makers (High/Med/Low + reasons)",
+    "data_type": "VARCHAR(250)",
+    "nullability": "Nullable",
+    "data_source": "Analyst Assessment"
+  },
+  {
+    "id": 49,
+    "key": "Company Contact Email",
+    "category": "Contact Info",
+    "description": "General company inquiry email",
+    "data_type": "VARCHAR(255)",
+    "nullability": "Nullable",
+    "data_source": "Company Website"
+  },
+  {
+    "id": 50,
+    "key": "Company Phone Number",
+    "category": "Contact Info",
+    "description": "Primary company phone number",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Nullable",
+    "data_source": "Company Website"
+  },
+  {
+    "id": 51,
+    "key": "Primary Contact Person's Name",
+    "category": "Contact Info",
+    "description": "Name of main point of contact",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "CRM / Manual Input"
+  },
+  {
+    "id": 52,
+    "key": "Primary Contact Person's Title",
+    "category": "Contact Info",
+    "description": "Title/role of primary contact",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "CRM"
+  },
+  {
+    "id": 53,
+    "key": "Primary Contact Person's Email",
+    "category": "Contact Info",
+    "description": "Email of primary contact",
+    "data_type": "VARCHAR(255)",
+    "nullability": "Nullable",
+    "data_source": "CRM / Apollo"
+  },
+  {
+    "id": 54,
+    "key": "Primary Contact Person's Phone Number",
+    "category": "Contact Info",
+    "description": "Phone of primary contact",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Nullable",
+    "data_source": "CRM"
+  },
+  {
+    "id": 55,
+    "key": "Awards & Recognitions",
+    "category": "Reputation",
+    "description": "Recent awards, certifications, or recognitions",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Company Website"
+  },
+  {
+    "id": 56,
+    "key": "Brand Sentiment Score",
+    "category": "Reputation",
+    "description": "Overall brand sentiment (qualitative score + data sources)",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "Media Listening Tools"
+  },
+  {
+    "id": 57,
+    "key": "Event Participation",
+    "category": "Reputation",
+    "description": "Recent conferences/events participated in",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Social Media"
+  },
+  {
+    "id": 58,
+    "key": "Regulatory & Compliance Status",
+    "category": "Risk & Compliance",
+    "description": "Key certifications (SOC2, HIPAA, GDPR, etc.)",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "Trust Center Page"
+  },
+  {
+    "id": 59,
+    "key": "Legal Issues / Controversies",
+    "category": "Risk & Compliance",
+    "description": "Any ongoing/resolved legal issues or controversies",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Court Records / News"
+  },
+  {
+    "id": 60,
+    "key": "Annual Revenues",
+    "category": "Financials",
+    "description": "Latest annual revenue figure (exact or estimated)",
+    "data_type": "DECIMAL / VARCHAR",
+    "nullability": "Nullable",
+    "data_source": "SEC / Pitchbook / Estimates"
+  },
+  {
+    "id": 61,
+    "key": "Annual Profits",
+    "category": "Financials",
+    "description": "Latest annual profit/loss",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "Annual Reports / SEC"
+  },
+  {
+    "id": 62,
+    "key": "Revenue Mix",
+    "category": "Financials",
+    "description": "Breakdown of revenue (% recurring vs. one-time/service)",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Investor Deck"
+  },
+  {
+    "id": 63,
+    "key": "Company Valuation",
+    "category": "Financials",
+    "description": "Most recent valuation or estimated value",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "Pitchbook / TechCrunch"
+  },
+  {
+    "id": 64,
+    "key": "Year-over-Year Growth Rate",
+    "category": "Financials",
+    "description": "YoY revenue growth percentage",
+    "data_type": "VARCHAR(10)",
+    "nullability": "Nullable",
+    "data_source": "Annual Reports"
+  },
+  {
+    "id": 65,
+    "key": "Profitability Status",
+    "category": "Financials",
+    "description": "Current profitability (profitable/break-even/loss-making)",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Not Null",
+    "data_source": "Financial Statements"
+  },
+  {
+    "id": 66,
+    "key": "Market Share (%)",
+    "category": "Financials",
+    "description": "Estimated market share in primary segment",
+    "data_type": "VARCHAR(10)",
+    "nullability": "Nullable",
+    "data_source": "Analyst Reports"
+  },
+  {
+    "id": 67,
+    "key": "Key Investors / Backers",
+    "category": "Funding",
+    "description": "Major investors or backers",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Crunchbase / Pitchbook"
+  },
+  {
+    "id": 68,
+    "key": "Recent Funding Rounds",
+    "category": "Funding",
+    "description": "Details of recent funding: amount, date, stage",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Crunchbase"
+  },
+  {
+    "id": 69,
+    "key": "Total Capital Raised",
+    "category": "Funding",
+    "description": "Cumulative capital raised to date",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "SEC Filings / Crunchbase"
+  },
+  {
+    "id": 70,
+    "key": "ESG Practices or Ratings",
+    "category": "Sustainability",
+    "description": "ESG practices, scores, or initiatives",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "ESG Reports"
+  },
+  {
+    "id": 71,
+    "key": "Sales Motion",
+    "category": "Sales & Growth",
+    "description": "Primary sales approach (PLG, Inside, Field Sales)",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Not Null",
+    "data_source": "GTM Strategy Deck"
+  },
+  {
+    "id": 72,
+    "key": "Customer Acquisition Cost (CAC)",
+    "category": "Sales & Growth",
+    "description": "Average cost to acquire a customer",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "Internal Ops / Investor Update"
+  },
+  {
+    "id": 73,
+    "key": "Customer Lifetime Value (CLV)",
+    "category": "Sales & Growth",
+    "description": "Average revenue per customer over lifetime",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "Internal Ops / Investor Update"
+  },
+  {
+    "id": 74,
+    "key": "CAC:LTV Ratio",
+    "category": "Sales & Growth",
+    "description": "Ratio of CAC to CLV (ideal >3:1)",
+    "data_type": "VARCHAR(10)",
+    "nullability": "Nullable",
+    "data_source": "Investor Update"
+  },
+  {
+    "id": 75,
+    "key": "Churn Rate",
+    "category": "Sales & Growth",
+    "description": "Annual customer churn percentage",
+    "data_type": "VARCHAR(10)",
+    "nullability": "Nullable",
+    "data_source": "SaaS Metrics Dashboard"
+  },
+  {
+    "id": 76,
+    "key": "Net Promoter Score (NPS)",
+    "category": "Sales & Growth",
+    "description": "Customer satisfaction score (NPS)",
+    "data_type": "INTEGER",
+    "nullability": "Nullable",
+    "data_source": "Customer Survey"
+  },
+  {
+    "id": 77,
+    "key": "Customer Concentration Risk",
+    "category": "Sales & Growth",
+    "description": "Risk if top client >20% of revenue (yes/no + %)",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Audited Financials"
+  },
+  {
+    "id": 78,
+    "key": "Burn Rate",
+    "category": "Sales & Growth",
+    "description": "The amount of venture capital or cash the company spends monthly.",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "Investor Updates"
+  },
+  {
+    "id": 79,
+    "key": "Runway",
+    "category": "Sales & Growth",
+    "description": "The number of months the company can operate before running out of cash.",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "Investor Updates"
+  },
+  {
+    "id": 80,
+    "key": "Burn Multiplier",
+    "category": "Sales & Growth",
+    "description": "Efficiency metric (e.g., net burn / net new ARR)",
+    "data_type": "DECIMAL",
+    "nullability": "Nullable",
+    "data_source": "SaaS Benchmarks"
+  },
+  {
+    "id": 81,
+    "key": "Intellectual Property",
+    "category": "Innovation",
+    "description": "Patents, trademarks, or key IP owned",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Patent Office DB"
+  },
+  {
+    "id": 82,
+    "key": "R&D Investment",
+    "category": "Innovation",
+    "description": "R&D spend as % of revenue or absolute amount",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Nullable",
+    "data_source": "Annual Report"
+  },
+  {
+    "id": 83,
+    "key": "AI/ML Adoption Level",
+    "category": "Innovation",
+    "description": "Level of AI/ML use with specific examples",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Tech Blog / Product Docs"
+  },
+  {
+    "id": 84,
+    "key": "Tech Stack/Tools Used",
+    "category": "Operations",
+    "description": "Key software/tools/tech stack used",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "StackShare / Job Posts"
+  },
+  {
+    "id": 85,
+    "key": "Cybersecurity Posture",
+    "category": "Operations",
+    "description": "Cybersecurity certifications or breach history",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Security Page / News"
+  },
+  {
+    "id": 86,
+    "key": "Supply Chain Dependencies",
+    "category": "Operations",
+    "description": "Critical suppliers and associated risks",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Supplier Portal"
+  },
+  {
+    "id": 87,
+    "key": "Geopolitical Risks",
+    "category": "Operations",
+    "description": "Geopolitical/macro risks (e.g., tariffs, regulations)",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Risk Report"
+  },
+  {
+    "id": 88,
+    "key": "Macro Risks",
+    "category": "Operations",
+    "description": "External large-scale factors (political, economic) that could impact the business.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Annual Report"
+  },
+  {
+    "id": 89,
+    "key": "Diversity Metrics",
+    "category": "People & Talent",
+    "description": "Workforce diversity breakdown and DEI efforts",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "CSR Report"
+  },
+  {
+    "id": 90,
+    "key": "Remote Work Policy",
+    "category": "People & Talent",
+    "description": "Remote/hybrid policy (% remote + productivity impact)",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Not Null",
+    "data_source": "Careers Page"
+  },
+  {
+    "id": 91,
+    "key": "Training/Development Spend",
+    "category": "People & Talent",
+    "description": "Annual spend on employee training/development",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Nullable",
+    "data_source": "HR Budget Reports"
+  },
+  {
+    "id": 92,
+    "key": "Partnership Ecosystem",
+    "category": "Market",
+    "description": "Key strategic partnerships or alliances",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Partner Portal"
+  },
+  {
+    "id": 93,
+    "key": "Exit Strategy/History",
+    "category": "Market",
+    "description": "Potential or past events like IPOs, acquisitions, or mergers.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Press Releases"
+  },
+  {
+    "id": 94,
+    "key": "Carbon Footprint/Environmental Impact",
+    "category": "Sustainability",
+    "description": "Estimated carbon footprint or env. impact",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "ESG Report"
+  },
+  {
+    "id": 95,
+    "key": "Ethical Sourcing Practices",
+    "category": "Sustainability",
+    "description": "Practices for ethical sourcing/supply chain",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "ESG Report"
+  },
+  {
+    "id": 96,
+    "key": "Benchmark vs. Peers",
+    "category": "Benchmarking",
+    "description": "Key metrics compared to 3-5 peers",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Analyst Reports"
+  },
+  {
+    "id": 97,
+    "key": "Future Projections",
+    "category": "Forecasting",
+    "description": "Projected revenue/growth for next 1-3 years",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Investor Deck"
+  },
+  {
+    "id": 98,
+    "key": "Strategic Priorities",
+    "category": "Forecasting",
+    "description": "Top 3-5 year priorities, initiatives, resource allocation",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Annual Letter to Shareholders"
+  },
+  {
+    "id": 99,
+    "key": "Industry Associations / Memberships",
+    "category": "Network",
+    "description": "Key industry associations, membership level/role, benefits",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Website Footer"
+  },
+  {
+    "id": 100,
+    "key": "Case Studies / Public Success Stories",
+    "category": "Proof Points",
+    "description": "2-5 public case studies with links and results",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Website Resources"
+  },
+  {
+    "id": 101,
+    "key": "Go-to-Market Strategy",
+    "category": "Go-to-Market",
+    "description": "Channels, pricing, buyer personas",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Internal Strategy Docs"
+  },
+  {
+    "id": 102,
+    "key": "Innovation Roadmap",
+    "category": "Innovation",
+    "description": "Upcoming products/features, R&D pipeline status",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Product Launch Events"
+  },
+  {
+    "id": 103,
+    "key": "Product Pipeline",
+    "category": "Innovation",
+    "description": "Upcoming features, products, or services currently in development.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Product Updates"
+  },
+  {
+    "id": 104,
+    "key": "Board of Directors / Advisors",
+    "category": "Governance",
+    "description": "Board/advisor composition, notable members, independence",
+    "data_type": "TEXT",
+    "nullability": "Not Null",
+    "data_source": "Team Page / SEC Filing"
+  },
+  {
+    "id": 105,
+    "key": "Company Introduction / Marketing videos",
+    "category": "Digital Presence",
+    "description": "Links to official video content or channel playlists.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "YouTube Channel"
+  },
+  {
+    "id": 106,
+    "key": "Customer testimonial",
+    "category": "Proof Points",
+    "description": "Quotes or video links from verified customers regarding their experience.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Website Homepage"
+  },
+  {
+    "id": 107,
+    "key": "Industry Benchmark Technology Adoption Rating",
+    "category": "Benchmarking",
+    "description": "A comparison of the company's tech stack maturity against industry peers.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Analyst Reports"
+  },
+  {
+    "id": 108,
+    "key": "Total Addressable Market (TAM)",
+    "category": "Market",
+    "description": "The total global demand or revenue opportunity for a product/service if 100% market share is achieved.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Investor Pitch"
+  },
+  {
+    "id": 109,
+    "key": "Serviceable Addressable Market (SAM)",
+    "category": "Market",
+    "description": "The portion of TAM that is within the company\u2122s geographic and specialized reach.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Investor Pitch"
+  },
+  {
+    "id": 110,
+    "key": "Serviceable Obtainable Market (SOM)",
+    "category": "Market",
+    "description": "The specific percentage of SAM that the company realistically targets to capture in the short term.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Investor Pitch"
+  },
+  {
+    "id": 111,
+    "key": "Work culture",
+    "category": "Culture & People",
+    "description": "Describes whether the workplace encourages collaboration and mutual support or promotes internal competition and sustained pressure.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Glassdoor / Internal Survey"
+  },
+  {
+    "id": 112,
+    "key": "Manager quality",
+    "category": "Culture & People",
+    "description": "Indicates whether managers focus on coaching, mentoring, and long-term growth versus only driving task completion and short-term outcomes.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Employee Reviews"
+  },
+  {
+    "id": 113,
+    "key": "Psychological safety",
+    "category": "Culture & People",
+    "description": "Reflects how safe employees feel to speak openly, ask questions, challenge ideas, and admit mistakes without fear of punishment.",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "Internal Pulse Surveys"
+  },
+  {
+    "id": 114,
+    "key": "Feedback culture",
+    "category": "Culture & People",
+    "description": "Shows whether feedback is continuous and constructive or limited to infrequent, formal review cycles.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "HR Policy"
+  },
+  {
+    "id": 115,
+    "key": "Diversity & inclusion",
+    "category": "Culture & People",
+    "description": "Evaluates gender balance, inclusion practices, and whether diversity initiatives are meaningful or purely symbolic.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "DEI Report"
+  },
+  {
+    "id": 116,
+    "key": "Ethical standards",
+    "category": "Culture & People",
+    "description": "Measures integrity, transparency, fairness, and how the organization handles ethical dilemmas and failures.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Code of Conduct"
+  },
+  {
+    "id": 117,
+    "key": "Typical working hours",
+    "category": "WorkLife Balance & Work Patterns",
+    "description": "Defines whether work hours are fixed, flexible, or unpredictable on a daily basis.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Job Descriptions"
+  },
+  {
+    "id": 118,
+    "key": "Overtime expectations",
+    "category": "WorkLife Balance & Work Patterns",
+    "description": "Assesses whether overtime is occasional and situational or routinely expected.",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "Employee Reviews"
+  },
+  {
+    "id": 119,
+    "key": "Weekend work",
+    "category": "WorkLife Balance & Work Patterns",
+    "description": "Indicates how often employees are required to work on weekends.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Employee Reviews"
+  },
+  {
+    "id": 120,
+    "key": "Remote / hybrid / on-site flexibility",
+    "category": "WorkLife Balance & Work Patterns",
+    "description": "Describes flexibility in choosing between remote, hybrid, or fully on-site work models.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Not Null",
+    "data_source": "Careers Page"
+  },
+  {
+    "id": 121,
+    "key": "Leave policy",
+    "category": "WorkLife Balance & Work Patterns",
+    "description": "Evaluates how easy it is to take leaves, including sick leave and mental health days.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "HR Handbook"
+  },
+  {
+    "id": 122,
+    "key": "Burnout risk",
+    "category": "WorkLife Balance & Work Patterns",
+    "description": "Measures whether the pace of work is intense but sustainable or leads to frequent burnout and firefighting.",
+    "data_type": "VARCHAR(20)",
+    "nullability": "Nullable",
+    "data_source": "Employee Reviews"
+  },
+  {
+    "id": 123,
+    "key": "Central vs peripheral location",
+    "category": "Location, Commute & Accessibility",
+    "description": "Identifies whether the office is located in a central business area or on the city outskirts.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Office Address / Maps"
+  },
+  {
+    "id": 124,
+    "key": "Public transport access",
+    "category": "Location, Commute & Accessibility",
+    "description": "Assesses availability and convenience of public transport options near the office.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Maps API"
+  },
+  {
+    "id": 125,
+    "key": "Cab availability and company cab policy",
+    "category": "Location, Commute & Accessibility",
+    "description": "Evaluates availability of cabs and whether the company provides transport support.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "HR Policy"
+  },
+  {
+    "id": 126,
+    "key": "Commute time from airport",
+    "category": "Location, Commute & Accessibility",
+    "description": "Measures travel time to the nearest airport, relevant for client-facing or travel-heavy roles.",
+    "data_type": "INTEGER",
+    "nullability": "Nullable",
+    "data_source": "Maps API"
+  },
+  {
+    "id": 127,
+    "key": "Office zone type",
+    "category": "Location, Commute & Accessibility",
+    "description": "Indicates whether the office is in a tech park, IT hub, or mixed-use commercial area.",
+    "data_type": "VARCHAR(100)",
+    "nullability": "Nullable",
+    "data_source": "Maps API / Address"
+  },
+  {
+    "id": 128,
+    "key": "Area safety",
+    "category": "Safety & Well-being",
+    "description": "Evaluates safety of the surrounding area during both daytime and late hours.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Crime Stats DB"
+  },
+  {
+    "id": 129,
+    "key": "Company safety policies",
+    "category": "Safety & Well-being",
+    "description": "Assesses company policies related to employee safety, including late-night transport and women safety measures.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "HR Handbook"
+  },
+  {
+    "id": 130,
+    "key": "Office infrastructure safety",
+    "category": "Safety & Well-being",
+    "description": "Reviews physical safety standards of office infrastructure and facilities.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Safety Audit Report"
+  },
+  {
+    "id": 131,
+    "key": "Emergency response preparedness",
+    "category": "Safety & Well-being",
+    "description": "Measures preparedness for medical, fire, or other emergency situations.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Internal Logs"
+  },
+  {
+    "id": 132,
+    "key": "Health support",
+    "category": "Safety & Well-being",
+    "description": "Evaluates quality of health insurance, OPD benefits, and mental health support.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Benefits Guide"
+  },
+  {
+    "id": 133,
+    "key": "Onboarding and training quality",
+    "category": "Learning & Growth Opportunities",
+    "description": "Assesses effectiveness of onboarding programs and initial training.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Glassdoor / Survey"
+  },
+  {
+    "id": 134,
+    "key": "Learning culture",
+    "category": "Learning & Growth Opportunities",
+    "description": "Indicates availability of certifications, courses, and internal learning platforms.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Careers Page"
+  },
+  {
+    "id": 135,
+    "key": "Exposure quality",
+    "category": "Learning & Growth Opportunities",
+    "description": "Measures exposure to real-world problem solving versus repetitive or low-impact tasks.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Job Descriptions"
+  },
+  {
+    "id": 136,
+    "key": "Mentorship availability",
+    "category": "Learning & Growth Opportunities",
+    "description": "Evaluates access to experienced mentors and guidance.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "HR Policy"
+  },
+  {
+    "id": 137,
+    "key": "Internal mobility",
+    "category": "Learning & Growth Opportunities",
+    "description": "Indicates ease of moving across roles or teams internally.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "HR Reports"
+  },
+  {
+    "id": 138,
+    "key": "Promotion clarity",
+    "category": "Learning & Growth Opportunities",
+    "description": "Clarifies whether promotions are merit-based, time-based, and transparently defined.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Employee Handbook"
+  },
+  {
+    "id": 139,
+    "key": "Tools and technology access",
+    "category": "Learning & Growth Opportunities",
+    "description": "Assesses access to modern tools, software, and technologies used in the industry.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Job Posts / Tech Blog"
+  },
+  {
+    "id": 140,
+    "key": "Role clarity",
+    "category": "Role & Work Quality",
+    "description": "Measures how clearly role responsibilities and expectations are defined.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Employee Reviews"
+  },
+  {
+    "id": 141,
+    "key": "Early ownership",
+    "category": "Role & Work Quality",
+    "description": "Assesses level of ownership and responsibility given early in the role.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Job Descriptions"
+  },
+  {
+    "id": 142,
+    "key": "Work impact",
+    "category": "Role & Work Quality",
+    "description": "Evaluates whether work impacts internal processes, customers, or revenue directly.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Org Chart"
+  },
+  {
+    "id": 143,
+    "key": "Execution vs thinking balance",
+    "category": "Role & Work Quality",
+    "description": "Indicates balance between execution-focused tasks and strategic or analytical thinking.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Job Description"
+  },
+  {
+    "id": 144,
+    "key": "Automation level",
+    "category": "Role & Work Quality",
+    "description": "Measures reliance on automation versus manual or repetitive work.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Tech Blog"
+  },
+  {
+    "id": 145,
+    "key": "Cross-functional exposure",
+    "category": "Role & Work Quality",
+    "description": "Assesses opportunities to collaborate with multiple teams or functions.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Org Structure"
+  },
+  {
+    "id": 146,
+    "key": "Company maturity",
+    "category": "Company Stability & Reputation",
+    "description": "Identifies whether the company is a startup, scale-up, or mature enterprise.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Not Null",
+    "data_source": "General Info"
+  },
+  {
+    "id": 147,
+    "key": "Brand value",
+    "category": "Company Stability & Reputation",
+    "description": "Evaluates brand recognition and perceived resume value.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Google Trends"
+  },
+  {
+    "id": 148,
+    "key": "Client quality",
+    "category": "Company Stability & Reputation",
+    "description": "Assesses quality of clients and their standing in the industry.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Website"
+  },
+  {
+    "id": 149,
+    "key": "Layoff history",
+    "category": "Company Stability & Reputation",
+    "description": "Reviews past instances of layoffs, restructuring, or instability.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "News / Layoffs.fyi"
+  },
+  {
+    "id": 150,
+    "key": "Fixed vs variable pay",
+    "category": "Compensation & Benefits",
+    "description": "Indicates proportion of fixed salary versus variable or performance-linked pay.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Offer Letters / Glassdoor"
+  },
+  {
+    "id": 151,
+    "key": "Bonus predictability",
+    "category": "Compensation & Benefits",
+    "description": "Measures consistency and reliability of bonuses.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Employee Reviews"
+  },
+  {
+    "id": 152,
+    "key": "ESOPs and long-term incentives",
+    "category": "Compensation & Benefits",
+    "description": "Evaluates ESOPs or long-term incentives and their actual realized value.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Offer Data / Blind"
+  },
+  {
+    "id": 153,
+    "key": "Family health insurance",
+    "category": "Compensation & Benefits",
+    "description": "Assesses health insurance coverage for employees and dependents.",
+    "data_type": "VARCHAR(500)",
+    "nullability": "Nullable",
+    "data_source": "Benefits Handbook"
+  },
+  {
+    "id": 154,
+    "key": "Relocation support",
+    "category": "Compensation & Benefits",
+    "description": "Indicates support provided for relocation expenses.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Careers Page"
+  },
+  {
+    "id": 155,
+    "key": "Lifestyle and wellness benefits",
+    "category": "Compensation & Benefits",
+    "description": "Reviews additional benefits such as meals, transport, and wellness programs.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Careers Page"
+  },
+  {
+    "id": 156,
+    "key": "Exit opportunities",
+    "category": "Long-Term Career Signaling",
+    "description": "Tracks typical career paths of former employees.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "LinkedIn Alumni Data"
+  },
+  {
+    "id": 157,
+    "key": "Skill relevance",
+    "category": "Long-Term Career Signaling",
+    "description": "Evaluates relevance of skills gained to the broader industry.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Job Descriptions"
+  },
+  {
+    "id": 158,
+    "key": "External recognition",
+    "category": "Long-Term Career Signaling",
+    "description": "Measures recognition and credibility among top-tier employers.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Market Survey"
+  },
+  {
+    "id": 159,
+    "key": "Network strength",
+    "category": "Long-Term Career Signaling",
+    "description": "Assesses strength of alumni and leadership networks.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "LinkedIn"
+  },
+  {
+    "id": 160,
+    "key": "Global exposure",
+    "category": "Long-Term Career Signaling",
+    "description": "Indicates exposure to global clients, teams, or markets.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Company Locations"
+  },
+  {
+    "id": 161,
+    "key": "Mission clarity",
+    "category": "Values Alignment",
+    "description": "Evaluates clarity and consistency of the company\u2122s mission and purpose.",
+    "data_type": "VARCHAR(50)",
+    "nullability": "Nullable",
+    "data_source": "Glassdoor / Survey"
+  },
+  {
+    "id": 162,
+    "key": "Sustainability and CSR",
+    "category": "Values Alignment",
+    "description": "Assesses commitment to sustainability and social responsibility.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "Impact Report"
+  },
+  {
+    "id": 163,
+    "key": "Crisis behavior",
+    "category": "Values Alignment",
+    "description": "Reviews company behavior and decision-making during crises.",
+    "data_type": "TEXT",
+    "nullability": "Nullable",
+    "data_source": "News Archives"
+  }
+]

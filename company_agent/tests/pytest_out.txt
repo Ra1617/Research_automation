@@ -1,0 +1,53 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.0, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\seeth\Downloads\company_agent\company_agent\tests
+plugins: anyio-4.12.0, Faker-38.2.0, langsmith-0.5.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1
+collected 8 items / 3 errors
+
+=================================== ERRORS ====================================
+______________ ERROR collecting integration_tests/test_graph.py _______________
+integration_tests\test_graph.py:4: in <module>
+    from services import graph
+..\services\graph.py:253: in <module>
+    ???
+..\services\graph.py:248: in get_graph
+    if _graph_cache is None:
+                       ^^^^^^
+..\services\graph.py:127: in build_graph
+    project_root = Path(__file__).resolve().parents[1]
+                  ^^^^^^^^^^^^
+E   NameError: name 'project_root' is not defined
+______________ ERROR collecting unit_tests/test_configuration.py ______________
+unit_tests\test_configuration.py:3: in <module>
+    from services.graph import graph
+..\services\graph.py:254: in <module>
+    graph = get_graph()
+            ^^^^^^^^^^^
+..\services\graph.py:249: in get_graph
+    _graph_cache = build_graph()
+                   ^^^^^^^^^^^^^
+..\services\graph.py:135: in build_graph
+    prompt = build_prompt(system_text, user_text, max_attempts)
+                                                  ^^^^^^^^^^^^
+E   NameError: name 'max_attempts' is not defined
+___________ ERROR collecting unit_tests/test_consolidation_flow.py ____________
+unit_tests\test_consolidation_flow.py:3: in <module>
+    from main import consolidate
+..\main.py:18: in <module>
+    from services.graph import get_graph
+..\services\graph.py:254: in <module>
+    graph = get_graph()
+            ^^^^^^^^^^^
+..\services\graph.py:249: in get_graph
+    _graph_cache = build_graph()
+                   ^^^^^^^^^^^^^
+..\services\graph.py:135: in build_graph
+    prompt = build_prompt(system_text, user_text, max_attempts)
+                                                  ^^^^^^^^^^^^
+E   NameError: name 'max_attempts' is not defined
+=========================== short test summary info ===========================
+ERROR integration_tests/test_graph.py - NameError: name 'project_root' is not...
+ERROR unit_tests/test_configuration.py - NameError: name 'max_attempts' is no...
+ERROR unit_tests/test_consolidation_flow.py - NameError: name 'max_attempts' ...
+!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!
+============================= 3 errors in 13.42s ==============================

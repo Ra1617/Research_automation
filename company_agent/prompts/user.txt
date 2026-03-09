@@ -1,0 +1,21 @@
+Company to research: {company_name}
+Generate a complete company intelligence profile for the above company.
+Return a single JSON object using EXACTLY the field names listed in the system instructions.
+
+STRICT REQUIREMENTS:
+Output ONLY valid JSON.
+Do NOT include markdown.
+Do NOT include code fences.
+Do NOT include explanations.
+Do NOT include commentary.
+Do NOT include any text before or after the JSON.
+Do NOT omit any field.
+Do NOT add any extra fields.
+Do NOT rename or reorder keys.
+All values must be strings.
+Use "N/A" where information is unavailable.
+The "Company Name" field must never be "N/A".
+Financial data must include currency and timeframe.
+If any constraint cannot be satisfied, return "N/A" for that field.
+If the JSON structure is invalid, regenerate internally before responding.
+Final output must be a syntactically valid JSON object with all fields populated.
