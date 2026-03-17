@@ -33,31 +33,61 @@ pipeline {
 
         stage('Setup Python Environment') {
             steps {
-                sh '''
-                python3 -m venv venv
-                . venv/bin/activate
-                pip install --upgrade pip
-                pip install -r requirements.txt
-                '''
+                script {
+                    if (isUnix()) {
+                        sh '''
+                        python3 -m venv venv
+                        . venv/bin/activate
+                        pip install --upgrade pip
+                        pip install -r requirements.txt
+                        '''
+                    } else {
+                        bat '''
+                        python -m venv venv
+                        call venv\\Scripts\\activate
+                        python -m pip install --upgrade pip
+                        pip install -r requirements.txt
+                        '''
+                    }
+                }
             }
         }
 
         stage('Lint (Optional but Recommended)') {
             steps {
-                sh '''
-                . venv/bin/activate
-                pip install flake8 || true
-                flake8 . || true
-                '''
+                script {
+                    if (isUnix()) {
+                        sh '''
+                        . venv/bin/activate
+                        pip install flake8 || true
+                        flake8 . || true
+                        '''
+                    } else {
+                        bat '''
+                        call venv\\Scripts\\activate
+                        pip install flake8
+                        flake8 .
+                        '''
+                    }
+                }
             }
         }
 
         stage('Run Tests (Pytest + Validation)') {
             steps {
-                sh '''
-                . venv/bin/activate
-                pytest v3/tests/ --maxfail=1 --disable-warnings -q
-                '''
+                script {
+                    if (isUnix()) {
+                        sh '''
+                        . venv/bin/activate
+                        pytest v3/tests/ --maxfail=1 --disable-warnings -q
+                        '''
+                    } else {
+                        bat '''
+                        call venv\\Scripts\\activate
+                        pytest v3/tests/ --maxfail=1 --disable-warnings -q
+                        '''
+                    }
+                }
             }
         }
 
@@ -65,10 +95,17 @@ pipeline {
             steps {
                 script {
                     retry(2) {
-                        sh '''
-                        . venv/bin/activate
-                        python -m v3.main --company "$SMOKE_COMPANY"
-                        '''
+                        if (isUnix()) {
+                            sh '''
+                            . venv/bin/activate
+                            python -m v3.main --company "$SMOKE_COMPANY"
+                            '''
+                        } else {
+                            bat '''
+                            call venv\\Scripts\\activate
+                            python -m v3.main --company "%SMOKE_COMPANY%"
+                            '''
+                        }
                     }
                 }
             }
@@ -76,19 +113,33 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh '''
-                docker build -f v3/Dockerfile -t $DOCKER_IMAGE .
-                '''
+                script {
+                    if (isUnix()) {
+                        sh 'docker build -f v3/Dockerfile -t $DOCKER_IMAGE .'
+                    } else {
+                        bat 'docker build -f v3/Dockerfile -t %DOCKER_IMAGE% .'
+                    }
+                }
             }
         }
 
         stage('Run Container (Local Deploy)') {
             steps {
-                sh '''
-                docker stop $APP_NAME || true
-                docker rm $APP_NAME || true
-                docker run -d -p 8000:8000 --name $APP_NAME $DOCKER_IMAGE
-                '''
+                script {
+                    if (isUnix()) {
+                        sh '''
+                        docker stop $APP_NAME || true
+                        docker rm $APP_NAME || true
+                        docker run -d -p 8000:8000 --name $APP_NAME $DOCKER_IMAGE
+                        '''
+                    } else {
+                        bat '''
+                        docker stop %APP_NAME% || ver > nul
+                        docker rm %APP_NAME% || ver > nul
+                        docker run -d -p 8000:8000 --name %APP_NAME% %DOCKER_IMAGE%
+                        '''
+                    }
+                }
             }
         }
     }
