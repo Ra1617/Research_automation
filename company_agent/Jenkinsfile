@@ -1,0 +1,78 @@
+pipeline {
+  agent any
+
+  environment {
+    PYTHON = "c:/Users/seeth/Downloads/company_agent/.venv/Scripts/python.exe"
+    PROJECT_DIR = "${WORKSPACE}/company_agent"
+    V3_RESULT = "v3_smoke.json"
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Install Dependencies') {
+      steps {
+        bat """
+          ${PYTHON} -m pip install --upgrade pip
+          ${PYTHON} -m pip install -r requirements.txt
+        """
+      }
+    }
+
+    stage('Lint') {
+      steps {
+        bat """
+          cd ${PROJECT_DIR}
+          ${PYTHON} -m flake8 .
+        """
+      }
+    }
+
+    stage('Unit Tests') {
+      steps {
+        bat """
+          cd ${PROJECT_DIR}
+          ${PYTHON} -m pytest -q
+        """
+      }
+      post {
+        always {
+          junit allowEmptyResults: true, testResults: '**/test-*.xml'
+        }
+      }
+    }
+
+    stage('Run v3 Smoke Test') {
+      steps {
+        bat """
+          cd ${PROJECT_DIR}
+          ${PYTHON} -m v3.main --company "Samsung" > ${V3_RESULT}
+          type ${V3_RESULT}
+        """
+      }
+    }
+
+    stage('API Health Check') {
+      steps {
+        bat """
+          curl --retry 3 --retry-delay 2 --fail http://localhost:8000/health
+        """
+      }
+    }
+  }
+
+  post {
+    success {
+      echo 'Jenkins pipeline completed successfully.'
+      archiveArtifacts artifacts: '${V3_RESULT}', fingerprint: true
+    }
+    failure {
+      echo 'Jenkins pipeline failed.'
+      archiveArtifacts artifacts: '${V3_RESULT}', allowEmptyArchive: true
+    }
+  }
+}

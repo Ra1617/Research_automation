@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  fastapi_service:
+    build:
+      context: ..
+      dockerfile: v3/Dockerfile
+    container_name: company_agent_api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://postgres:postgres@postgres:5432/company_agent}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      NVIDIA_API_KEY: ${NVIDIA_API_KEY:-}
+      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
+      MISTRAL_MODEL: ${MISTRAL_MODEL:-mistral-large-latest}
+      NVIDIA_MODEL: ${NVIDIA_MODEL:-meta/llama-4-maverick-17b-128e-instruct}
+      MAX_RETRIES: ${MAX_RETRIES:-3}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16
+    container_name: company_agent_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: company_agent
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d company_agent"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

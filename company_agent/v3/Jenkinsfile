@@ -1,0 +1,108 @@
+pipeline {
+    agent any
+
+    environment {
+        PYTHON_ENV = 'python3'
+        APP_NAME = 'agent-v3-api'
+        DOCKER_IMAGE = 'agent-v3-api:latest'
+        SMOKE_COMPANY = 'Realme'
+    }
+
+    options {
+        timestamps()
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                script {
+                    try {
+                        checkout scm
+                        echo 'Source code checked out from SCM.'
+                    } catch (Exception err) {
+                        echo 'Skipping checkout scm (job is not Pipeline script from SCM).'
+                    }
+
+                    if (!fileExists('requirements.txt') || !fileExists('v3/main.py')) {
+                        error('Source files are missing in workspace. Configure job as "Pipeline script from SCM" or copy repository files into the Jenkins workspace before build.')
+                    }
+                }
+            }
+        }
+
+        stage('Setup Python Environment') {
+            steps {
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Lint (Optional but Recommended)') {
+            steps {
+                sh '''
+                . venv/bin/activate
+                pip install flake8 || true
+                flake8 . || true
+                '''
+            }
+        }
+
+        stage('Run Tests (Pytest + Validation)') {
+            steps {
+                sh '''
+                . venv/bin/activate
+                pytest v3/tests/ --maxfail=1 --disable-warnings -q
+                '''
+            }
+        }
+
+        stage('Run v3 Pipeline (with Retry)') {
+            steps {
+                script {
+                    retry(2) {
+                        sh '''
+                        . venv/bin/activate
+                        python -m v3.main --company "$SMOKE_COMPANY"
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                docker build -f v3/Dockerfile -t $DOCKER_IMAGE .
+                '''
+            }
+        }
+
+        stage('Run Container (Local Deploy)') {
+            steps {
+                sh '''
+                docker stop $APP_NAME || true
+                docker rm $APP_NAME || true
+                docker run -d -p 8000:8000 --name $APP_NAME $DOCKER_IMAGE
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Pipeline executed successfully!'
+        }
+        failure {
+            echo '❌ Pipeline failed. Check logs.'
+        }
+        always {
+            archiveArtifacts artifacts: 'v3/outpul/*.json', allowEmptyArchive: true, fingerprint: true
+            cleanWs()
+        }
+    }
+}

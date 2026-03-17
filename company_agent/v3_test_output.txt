@@ -1,0 +1,9 @@
+============================================================
+  v3 Pipeline — End-to-End Test
+============================================================
+[OK] Imports succeeded
+
+--- executing pipeline (company: OpenAI) ---
+[DONE] JSON output written to v3_json_output.json
+
+DONE
